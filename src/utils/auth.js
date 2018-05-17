@@ -65,20 +65,22 @@ function registerCallback(User) {
                         }
                     })
                 } else {
-                    User.create({
-                        firstname: req.body.firstname,
-                        lastname: req.body.lastname,
-                        password: req.body.password,
-                        email: req.body.email,
-                    }).then((r) => {
-                        console.log('[AUTH]User created');
-                        req.login(r, (r) => {
-                            res.redirect('/');
-                        });
+                    bcrypt.hash(req.body.password,10).then((password => {
+                        User.create({
+                            firstname: req.body.firstname,
+                            lastname: req.body.lastname,
+                            password: password,
+                            email: req.body.email,
+                        }).then((r) => {
+                            console.log('[AUTH]User created');
+                            req.login(r, (r) => {
+                                res.redirect('/');
+                            });
 
-                    }).catch(e => {
-                        console.error(e);
-                    })
+                        }).catch(e => {
+                            console.error(e);
+                        })
+                    }))
                 }
             })
         }
