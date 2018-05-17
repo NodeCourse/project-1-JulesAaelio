@@ -1,5 +1,6 @@
 module.exports = (app,db) => {
     app.get('/add',(req,res) => {
+        console.log('add');
         res.render('survey_form');
     });
 
