@@ -44,6 +44,48 @@ function init(User) {
             else return cb(new Error("No user corresponding to the cookie's email address"));
         });
     });
+
     return passport;
 }
-module.exports = init;
+
+function registerCallback(User) {
+    return (req, res) => {
+        if (req.body && req.body.firstname && req.body.lastname && req.body.password && req.body.email) {
+            User.findOne({
+                where: {
+                    email: req.body.email,
+                }
+            }).then((r) => {
+                if (r) {
+                    res.render('login', {
+                        errors: {
+                            signup: [
+                                "Cette addresse est déjà utilisée."
+                            ]
+                        }
+                    })
+                } else {
+                    User.create({
+                        firstname: req.body.firstname,
+                        lastname: req.body.lastname,
+                        password: req.body.password,
+                        email: req.body.email,
+                    }).then((r) => {
+                        console.log('[AUTH]User created');
+                        req.login(r, (r) => {
+                            res.redirect('/');
+                        });
+
+                    }).catch(e => {
+                        console.error(e);
+                    })
+                }
+            })
+        }
+    }
+}
+
+module.exports.passport = init;
+module.exports.register = registerCallback;
+
+

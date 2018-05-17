@@ -3,6 +3,8 @@ html
         title Jules LAURENT - Survey
         block links
     body
+        if user
+            div #{user.firstname}
         main.container
             block content
         block scripts
