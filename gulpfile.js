@@ -11,6 +11,9 @@ gulp.task('serve',() => {
         script: './src/index.js',
         // this listens to changes in any of these files/routes and restarts the application
         watch: ["*.js", "public/*/*.*", "public/*"],
+        env: {
+            "COOKIE_SECRET": "1245"
+        },
         // Below i'm using es6 arrow functions but you can remove the arrow and have it a normal .on('restart', function() { // then place your stuff in here }
     }).on('restart',(f) => {
         sync.reload();
