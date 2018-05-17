@@ -8,7 +8,7 @@ gulp.task('serve',() => {
     });
     nodemon({
         // the script to run the app
-        script: 'index.js',
+        script: './src/index.js',
         // this listens to changes in any of these files/routes and restarts the application
         watch: ["*.js", "public/*/*.*", "public/*"],
         // Below i'm using es6 arrow functions but you can remove the arrow and have it a normal .on('restart', function() { // then place your stuff in here }

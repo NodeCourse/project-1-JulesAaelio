@@ -1,4 +1,4 @@
-const app = require('./express.js');
+const app = require('./utils/express.js');
 console.log("App started at " , new Date().toLocaleString());
 
 app.use('/',(req,res) => {
