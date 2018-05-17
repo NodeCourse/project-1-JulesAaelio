@@ -1,0 +1,22 @@
+{
+  "name": "project-1-julesaaelio",
+  "version": "1.0.0",
+  "description": "nodejs school project ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NodeCourse/project-1-JulesAaelio.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Jules Aaelio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NodeCourse/project-1-JulesAaelio/issues"
+  },
+  "homepage": "https://github.com/NodeCourse/project-1-JulesAaelio#readme"
+}
