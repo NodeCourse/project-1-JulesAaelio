@@ -28,6 +28,10 @@ app.post('/login',
     })
 );
 
+app.get('/add',(req,res) => {
+   res.render('survey_form');
+});
+
 app.post('/register',auth.register(db.User));
 
 //Launch server

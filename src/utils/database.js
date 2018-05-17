@@ -21,6 +21,27 @@ const User = db.define('user', {
     password : { type: sequelize.STRING }
 });
 
+const Answer = db.define('answer', {
+   label : sequelize.STRING,
+});
+
+const Vote = db.define('vote',{});
+
+
+//Relationships
+
+Survey.hasMany(Answer);
+Answer.belongsTo(Survey);
+
+Survey.belongsTo(User);
+User.hasMany(Survey);
+
+User.hasMany(Vote);
+Vote.belongsTo(User);
+
+Answer.hasMany(Vote);
+Vote.belongsTo(Answer);
+
 
 // Sync database
 db.sync().then((r)=> {
