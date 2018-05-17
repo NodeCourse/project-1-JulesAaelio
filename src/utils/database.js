@@ -1,4 +1,5 @@
 const sequelize = require('sequelize');
+const bcrypt = require('bcrypt');
 const db = new sequelize('nodetest','datauser','toto',{
     host: 'localhost',
     dialect: 'mysql'

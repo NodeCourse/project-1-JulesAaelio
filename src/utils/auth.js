@@ -4,19 +4,26 @@ const bcrypt = require('bcrypt');
 
 function init(User) {
     passport.use(new LocalStrategy((email, password, done) => {
+        console.log('[AUTH]',email,password);
         User
             .findOne({
                 where : { email }
             }).then(function (user) {
-            bcrypt.compare(password,user.password).then(r=> {
-                if(r) {
-                    return done(null, user)
+                if(user) {
+                    bcrypt.compare(password,user.password).then(r=> {
+                        if(r) {
+                            return done(null, user)
+                        }else {
+                            return done(null, false, {
+                                message: 'Invalid credentials'
+                            });
+                        }
+                    });
                 }else {
                     return done(null, false, {
-                        message: 'Invalid credentials'
+                        message: 'Unknown user'
                     });
                 }
-            });
         })
         // If an error occured, report it
             .catch(done);
