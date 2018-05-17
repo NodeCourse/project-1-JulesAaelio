@@ -1,0 +1,11 @@
+nav
+    .nav-wrapper
+        a.brand-logo(href='/')
+            img(src='/images/jlt.png' height='38px' width='auto')
+        ul.right
+            if !user
+                li
+                    a(href='/login').btn Se connecter
+            else
+                li Bienvenue #{user.firstname} #{user.lastname}
+                li

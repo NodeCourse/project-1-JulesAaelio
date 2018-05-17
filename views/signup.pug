@@ -1,4 +1,5 @@
-form(action='/register' method='post').container
+h3 Créer un compte
+form(action='/register' method='post')
     div
         label(for='lastname-field') NOM
         input(name='lastname' id='lastname-field')
@@ -11,4 +12,4 @@ form(action='/register' method='post').container
     div
         label(for='password-field') Mot de passe
         input(id='password-field' type='password' name='password')
-    button(type='submit').btn.btn-block Envoyer
+    button(type='submit').btn.btn-block Créer un compte
