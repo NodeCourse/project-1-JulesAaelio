@@ -1,5 +1,8 @@
 h3 Créer un compte
 form(action='/register' method='post')
+    if errors && errors.signup
+        for message in errors.signup
+            div #{message}
     div
         label(for='lastname-field') NOM
         input(name='lastname' id='lastname-field')
