@@ -3,7 +3,7 @@ block content
     div.row
         div.col.s5
             h3 Se connecter
-            form(action='/login' method='post')
+            form(method='post' action='/login?redirectTo='+redirectTo)
                 div
                     label(for='username-field') Nom d'utilisateur
                     input(name='username' id='username-field')
