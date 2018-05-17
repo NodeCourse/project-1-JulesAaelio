@@ -53,3 +53,5 @@ db.sync().then((r)=> {
 module.exports.sequelize = db;
 module.exports.Survey = Survey;
 module.exports.User = User;
+module.exports.Answer = Answer;
+module.exports.Vote = Vote;
