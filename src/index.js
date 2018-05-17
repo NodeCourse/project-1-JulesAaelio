@@ -34,6 +34,24 @@ app.get('/add',(req,res) => {
    res.render('survey_form');
 });
 
+app.get('/survey/:id',(req,res) =>{
+    if(req.params.id){
+        db.Survey.findById(req.params.id,{
+            include : [
+                {all:true}
+            ]
+        }).then(survey => {
+            if(survey) {
+                res.render('survey', {
+                    survey
+                })
+            }else {
+                req.next();
+            }
+        })
+    }
+});
+
 app.post('/add',(req,res) =>{
     console.log("add post ");
     if(req.body && req.body.question ){
@@ -57,7 +75,6 @@ app.post('/add',(req,res) =>{
     }else {
         console.log('no body')
     }
-
 });
 
 //Launch server

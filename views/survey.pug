@@ -1,0 +1,8 @@
+extends base
+block content
+    h1 #{survey.question}
+    div.choices
+        for choice in survey.answers
+          div.choice  #{choice.label}
+
+block scripts
