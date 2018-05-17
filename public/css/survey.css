@@ -1,0 +1,13 @@
+.choices {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    min-width: 200px;
+}
+.card-action a {
+    text-align: center;
+    display: block;
+    margin: auto !important;
+}

@@ -1,8 +1,9 @@
 extends base
+block links
+    link(rel='stylesheet' href="/css/survey.css")
 block content
-    h1 #{survey.question}
+    h1.center #{survey.question}
     div.choices
         for choice in survey.answers
-          div.choice  #{choice.label}
-
+          include choice_card
 block scripts

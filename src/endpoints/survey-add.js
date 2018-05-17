@@ -24,6 +24,8 @@ module.exports = (app,db) => {
                 answers: answers
             },{
                 include: [db.Answer]
+            }).then((r) => {
+               res.redirect('/survey/'+r.id);
             });
         }else {
             console.log('no body')

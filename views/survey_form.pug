@@ -1,7 +1,7 @@
 extends base
 block content
     h1 Créer un nouveau sondage :
-    form(method='post')
+    form(method='post' action="add")
         div
             label(for="question-field") Question
             input(id="question-field" name="question")
