@@ -14,6 +14,7 @@ require('./endpoints/default')(app);
 require('./endpoints/login.js')(app,auth,passport,db);
 require('./endpoints/survey-add')(app,db);
 require('./endpoints/survey-usage')(app,db);
+require('./endpoints/votes')(app,db);
 require('./endpoints/errors')(app);
 
 //Launch server
