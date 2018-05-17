@@ -5,13 +5,14 @@ block content
         div
             label(for="question-field") Question
             input(id="question-field")
-        div.answers
-            div
-                label(for="answer-1"  hidden)
-                input(id="answer-1" name="answer-1" placeholder="Réponse 1" data-answer-index="1").answer
-            div
-                label(for="answer-new"  hidden)
-                input(id="answer-new" placeholder="Ajouter un choix" data-answer-index="1").new-answer
+            div#answers-wrapper
+                div#answers
+                    div
+                        label(for="answer-1"  hidden)
+                        input(id="answer-1" name="answer-1" placeholder="Option 1" data-answer-index="1").answer
+                div
+                    label(for="answer-new"  hidden)
+                    input(id="answer-new" placeholder="Ajouter un choix" data-answer-index="new")
         div
             button(type='submit').btn.btn-block CREER LE SONDAGE
 block scripts
