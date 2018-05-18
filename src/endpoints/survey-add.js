@@ -21,7 +21,8 @@ module.exports = (app,db) => {
             console.log(answers);
             db.Survey.create({
                 question : req.body.question,
-                answers: answers
+                answers: answers,
+                userId: req.user.id
             },{
                 include: [db.Answer]
             }).then((r) => {
