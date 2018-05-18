@@ -1,0 +1,16 @@
+extends base
+block content
+    .row
+        .col.s4
+            a(href='/add')
+                .card#add-survey-toggle.red.accent-1
+                    .card-content.center
+                        .card-title
+                            div Ajouter
+                            div un sondage
+                            div.add-toggle.fa.fa-plus-circle
+
+        for survey in surveys
+            include survey_card.pug
+block scripts
+    script(src='/scripts/share.js')

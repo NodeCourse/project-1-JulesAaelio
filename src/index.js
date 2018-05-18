@@ -12,6 +12,7 @@ app.use(passport.session());
 //Declare routes behaviors here
 require('./endpoints/default')(app);
 require('./endpoints/login.js')(app,auth,passport,db);
+require('./endpoints/profile')(app,db);
 require('./endpoints/survey-add')(app,db);
 require('./endpoints/survey-usage')(app,db);
 require('./endpoints/votes')(app,db);

@@ -1,0 +1,9 @@
+.col.s4
+    .card
+        .card-content
+            span.card-title #{survey.question}
+            div Nombre de réponse :  #{survey.answers.length}
+        .card-action
+            a(href='/survey/'+survey.id) VOIR LE SONDAGE
+            input(type='text' value="/survey/"+survey.id  id="survey-link-"+survey.id ).link-container
+            a(href='#' id='copy-toggle-'+survey.id).copy-toggle COPIER LE LIEN

@@ -6,3 +6,13 @@ button.btn-block {
     margin-left:200px;
 }
 
+#add-survey-toggle {
+    font-size: 2em;
+    color : white;
+    height: 165px;
+}
+.link-container {
+    position: absolute;
+    left:     -1000px;
+    top:      -1000px;
+}

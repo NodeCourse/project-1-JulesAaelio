@@ -10,7 +10,7 @@ gulp.task('serve',() => {
         // the script to run the app
         script: './src/index.js',
         // this listens to changes in any of these files/routes and restarts the application
-        watch: ["./src/*.js",'./src/**/*.js'],
+        watch: ["src/*.js",'src/**/*.js'],
         env: {
             "COOKIE_SECRET": "1245"
         },
