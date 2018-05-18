@@ -21,6 +21,7 @@ module.exports = (app) => {
 
     //500
     app.use(function(err, req, res, next) {
+        console.log('ERREUR');
         console.error(err.stack);
         res.status(500).render('errors/500');
     });
