@@ -10,7 +10,7 @@ gulp.task('serve',() => {
         // the script to run the app
         script: './src/index.js',
         // this listens to changes in any of these files/routes and restarts the application
-        watch: ["*.js", "public/*/*.*", "public/*"],
+        watch: ["./src/*.js",'./src/**/*.js'],
         env: {
             "COOKIE_SECRET": "1245"
         },
@@ -19,4 +19,5 @@ gulp.task('serve',() => {
         sync.reload();
     });
     gulp.watch("views/*.pug").on('change', sync.reload);
+    gulp.watch("public/*/*.*").on('change', sync.reload);
 });
