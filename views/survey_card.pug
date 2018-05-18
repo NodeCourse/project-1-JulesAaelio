@@ -1,7 +1,7 @@
-.col.s4
-    .card
+.col.s12.m6.l4
+    .card.survey
         .card-content
-            span.card-title #{survey.question}
+            span.card-title #{survey.question.length > 50 ? survey.question.substring(0,40) + '..?' : survey.question}
             div Nombre de réponse :  #{survey.answers.length}
         .card-action
             a(href='/survey/'+survey.id) VOIR LE SONDAGE

@@ -9,10 +9,22 @@ button.btn-block {
 #add-survey-toggle {
     font-size: 2em;
     color : white;
-    height: 165px;
+    height: 200px;
+}
+
+.card.survey{
+    height: 200px;
+}
+
+.card.survey .card-content {
+    height: 142.5px;
 }
 .link-container {
     position: absolute;
-    left:     -1000px;
+    left:     -2000px;
     top:      -1000px;
+}
+
+.row {
+    flex-wrap: wrap;
 }

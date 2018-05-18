@@ -1,11 +1,17 @@
 nav
     .nav-wrapper
-        a.brand-logo(href='/')
+        a(href='/').brand-logo
             img(src='/images/jlt.png' height='38px' width='auto')
+
         ul.right
-            if !user
+
+            if user
                 li
-                    a(href='/login').btn Se connecter
-            else
-                li Bienvenue #{user.firstname} #{user.lastname}
+                    a(href='/all') Tout les sondages
+
                 li
+                    a(href='/user') Mes sondages
+                li
+                    a(href='/user')
+                        i.fa.fa-user.fa-fw
+                        span #{user.firstname} #{user.lastname}

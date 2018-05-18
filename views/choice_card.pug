@@ -1,6 +1,7 @@
 .card
     div.card-title.center #{choice.ratio.toFixed(2)} %
     .card-content.center #{choice.label}
-    .card-action
-        form(action='/survey/'+survey.id+'/vote/'+choice.id method='post')
-            button(type='submit').btn.btn-block VOTER
+    if !alreadyAnswered
+        .card-action
+            form(action='/survey/'+survey.id+'/vote/'+choice.id method='post')
+                button(type='submit').btn.btn-block VOTER
