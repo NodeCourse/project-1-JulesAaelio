@@ -11,3 +11,12 @@
     display: block;
     margin: auto !important;
 }
+
+.share-tool {
+    display: flex;
+    align-items: center;
+}
+
+.share-tool .btn {
+    min-width: 200px;
+}

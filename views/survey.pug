@@ -6,4 +6,14 @@ block content
     div.choices
         for choice in survey.answers
           include choice_card
+    div.share-tool
+        .row
+            .col.s12
+                .card
+                    .card-content
+                        span.card-title Partager ce sondage :
+                        input(type='text')#share-url
+                    .card-action
+                        a.btn.btn-block#copy-btn COPIER LE LIEN
 block scripts
+    script(src='/scripts/share.js')
